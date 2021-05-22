@@ -4,7 +4,8 @@
     <h2>Artists</h2>
     </header>
     <main>
-        <h3 class='list-header'>All artists</h3>
+    
+        <h3 class='list-header'>All artists {{this.$route.params.query}}</h3>
         <div class='filter-wrapper'>
           <input class='filter' type="text" placeholder="Filter artists" />        
         </div>
@@ -28,6 +29,13 @@ export default {
       const data = await res.json();
 
       return data;
+    },
+
+    async filterArtists() {
+      const artists = await this.fetchArtists();
+
+      // return artists;
+      return artists.filter(artist => artist.name.toLowerCase().includes('weird'));
     }
   },
   data() {
@@ -36,7 +44,7 @@ export default {
     };
   },
   async created() {
-    this.artists = await this.fetchArtists();
+    this.artists = await this.filterArtists();
   }
 };
 </script>

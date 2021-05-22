@@ -5,7 +5,7 @@
         <LogoMain />
       </div>
       <div class="navigation">
-        <router-link to="/">Artist overview</router-link> |
+        <router-link to="/artists">Artist overview</router-link> |
         <router-link to="/playlists">Playlist overview</router-link>
       </div>
     </header>

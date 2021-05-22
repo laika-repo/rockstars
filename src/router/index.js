@@ -9,7 +9,13 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    alias: "/artists",
+    component: ArtistListPage
+  },
+
+  {
+    path: "/artists",
+    name: "ArtistList",
     component: ArtistListPage
   },
   {
