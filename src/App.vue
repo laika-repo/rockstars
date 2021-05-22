@@ -1,17 +1,35 @@
 <template>
   <div id="app">
-    <header id="nav">
-      <router-link to="/">Artist overview</router-link> |
-      <router-link to="/playlists">Playlist overview</router-link>
+    <header class="page-header">
+      <div class="logo-wrapper">
+        <LogoMain />
+      </div>
+      <div class="navigation">
+        <router-link to="/">Artist overview</router-link> |
+        <router-link to="/playlists">Playlist overview</router-link>
+      </div>
     </header>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">  
+<script>
+import LogoMain from "./components/LogoMain.vue";
+
+export default {
+  name: "App",
+  components: {
+    LogoMain
+  }
+};
+</script>
+
+<style lang="scss">
 @import "./shared/_styles.scss";
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -31,18 +49,26 @@ body {
   color: $main-gray;
 }
 
-#nav {
+.page-header {
   background-color: $main-yellow;
-  padding: $padding--large 0;
+  padding: $padding--large;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
   a {
     text-transform: uppercase;
-    font-size: 12px;    
+    font-size: 10px;
+
+    @include sm {
+      font-size: 12px;
+    }
+
     font-weight: bold;
 
-
-    &:visited, &:active {
+    &:visited,
+    &:active {
       color: $main-gray;
     }
 
@@ -58,34 +84,37 @@ h1 {
   text-transform: uppercase;
   font-weight: 900;
   text-align: left;
+}
+
+.overview {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  @include md {
+    flex-direction: row;
   }
 
-  .overview {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-
-
-   @include md {
-        flex-direction: row;
-    }
-
-    & > header {
-        background-color: $main-yellow;
-        padding: $padding--large $padding--xlarge;
-        min-width: 33vw;
-    }
+  & > header {
+    background-color: $main-yellow;
+    padding: $padding--large $padding--xlarge;
   
-    h2 {
-        text-align: left;
-        margin: 0;
-        color: $main-gray;
-        line-height: 1em;
-        font-size: 32px;
-        font-weight: 900;
-        text-transform: uppercase;
+
+    @include md {
+      width: 25vw;
     }
+  }
+
+  h2 {
+    text-align: left;
+    margin: 0;
+    color: $main-gray;
+    line-height: 1em;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
 }
 
 h3.list-header {
@@ -109,13 +138,11 @@ main {
   text-align: left;
   color: white;
 
-
-  a { 
+  a {
     font-weight: 900;
     text-transform: uppercase;
     color: white;
     text-decoration: none;
-
   }
 }
 
@@ -126,6 +153,3 @@ main {
   justify-content: space-between;
 }
 </style>
-
-
-
