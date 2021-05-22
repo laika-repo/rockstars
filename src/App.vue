@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <header id="nav">
-      <router-link to="/">Artist overview</router-link>
+      <router-link to="/">Artist overview</router-link> |
+      <router-link to="/playlists">Playlist overview</router-link>
     </header>
     <router-view/>
   </div>

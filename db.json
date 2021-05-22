@@ -1,4 +1,8 @@
-{
+{"playlists": [
+	{
+	"id": 1,
+	"name": "Songs for sleeping"
+}],
 	"songs": [
 		{
 		"id": 190,
