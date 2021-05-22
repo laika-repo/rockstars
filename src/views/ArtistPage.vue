@@ -1,11 +1,15 @@
 <template>
-  <main class="overview">
-<header>
-    <h2>{{ artist.name }}</h2>
+  <section class="overview">
+    <header>
+      <h2>{{ artist.name }}</h2>
     </header>
-    <SongList :songs="songs" />
-    <SongList />
-  </main>
+
+    <main>
+    <h3 class='list-header'>All songs by {{artist.name}}</h3>
+      <SongList :songs="songs" />
+      <SongList />
+    </main>
+  </section>
 </template>
 
 <script>

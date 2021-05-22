@@ -1,11 +1,13 @@
 <template>
-  <main class="overview">
-<header>
-    <h2>All playlists</h2>
+  <section class="overview">
+    <header>
+      <h2>All playlists</h2>
     </header>
-    <PlayLists :playlists="playlists" />
-    <PlayLists />
-  </main>
+    <main>
+        <h3 class='list-header'>All playlists</h3>
+        <PlayLists :playlists="playlists" />
+    </main>
+  </section>
 </template>
 
 <script>
@@ -18,9 +20,7 @@ export default {
   },
   methods: {
     async fetchPlaylists() {
-      const res = await fetch(
-        `http://localhost:5000/playlists`
-      );
+      const res = await fetch(`http://localhost:5000/playlists`);
       const data = await res.json();
 
       return data;

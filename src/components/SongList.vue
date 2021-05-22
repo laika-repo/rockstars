@@ -12,7 +12,8 @@ import SongListItem from "./SongListItem";
 export default {
   name: "SongList",
   props: {
-    songs: Array
+    songs: Array,
+    title: String
   },
 
   components: { SongListItem }

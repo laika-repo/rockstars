@@ -11,6 +11,10 @@
 <style lang="scss">  
 @import "./shared/_styles.scss";
 
+h1, h2, h3 {
+  margin: 0;
+}
+
 html {
   padding: 0;
   font-family: sans-serif;
@@ -58,10 +62,19 @@ h1 {
 
   .overview {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+
+   @include md {
+        flex-direction: row;
+    }
 
     & > header {
         background-color: $main-yellow;
         padding: $padding--large $padding--xlarge;
+        min-width: 33vw;
     }
   
     h2 {
@@ -75,10 +88,20 @@ h1 {
     }
 }
 
+h3.list-header {
+  color: white;
+  font-size: 24px;
+  margin-bottom: $padding--large;
+}
+
+main {
+  margin: $padding--xxlarge $padding--xlarge;
+  min-width: 33vw;
+}
+
 .list {
   display: flex;
   flex-direction: column;
-  padding: $padding--xlarge $padding--xxlarge;
 }
 
 .list-item {

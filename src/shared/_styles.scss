@@ -1,9 +1,2 @@
-$main-yellow: #ffe000;
-$main-gray: #232323;
-
-$padding--xsmall: 2px;
-$padding--small: 4px;
-$padding--regular: 8px;
-$padding--large: 16px;
-$padding--xlarge: 24px;
-$padding--xxlarge: 32px;
+@import "./_variables.scss";
+@import "./_mixins.scss";

@@ -1,9 +1,13 @@
 <template>
   <section class='overview'>
     <header>
-    <h2>All Artists</h2>
+    <h2>Artists</h2>
     </header>
     <main>
+        <h3 class='list-header'>All artists</h3>
+        <div class='filter-wrapper'>
+          <input class='filter' type="text" placeholder="Filter artists" />        
+        </div>
         <ArtistList :artists="artists" />
     </main>
     
@@ -39,6 +43,21 @@ export default {
 
 <style lang="scss">
 @import "../shared/_styles.scss";
+
+
+
+.filter-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: stretch;
+  
+  margin-bottom: $padding--large;
+
+  .filter {
+    padding: $padding--regular;
+  }
+}
 
 
 </style>
