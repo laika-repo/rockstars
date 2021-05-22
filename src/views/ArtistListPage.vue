@@ -67,6 +67,7 @@ export default {
   .current-filter {
     color: white;
     font-weight: 300;
+    margin-bottom: $padding--small;
 
     strong {
       font-weight: bold;
