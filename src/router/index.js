@@ -8,12 +8,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    alias: "/artists",
-    component: ArtistListPage
-  },
-
-  {
     path: "/artists",
     name: "ArtistList",
     component: ArtistListPage
@@ -27,6 +21,11 @@ const routes = [
     path: "/artist/:id",
     name: "ArtistPage",
     component: ArtistPage
+  },
+  {
+    path: "/*",
+    alias: "/artists",
+    component: ArtistListPage
   }
 ];
 
