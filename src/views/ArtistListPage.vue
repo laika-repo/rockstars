@@ -32,15 +32,15 @@ export default {
   },
   data() {
     return {
-      artists: Array,
-      search: []
+      artists: [],
+      search: ''
     };
     
   },
 
   computed: {
     filteredArtists() {
-      return this.artists;
+      return this.artists.filter(artist => artist.name.toLowerCase().includes(this.search.toLowerCase()));
     },
 
     currentFilter() {
