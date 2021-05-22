@@ -1,5 +1,5 @@
 <template>
-  <img class='logo' src='../assets/logo-rockstars.png'>
+  <router-link to="/artists"><img class='logo' src='../assets/logo-rockstars.png'></router-link>
 </template>
 
 <style lang="scss">  

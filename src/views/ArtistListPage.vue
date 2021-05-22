@@ -6,8 +6,15 @@
     <main>
       <h3 class="list-header">All artists</h3>
       <div class="filter-wrapper">
-        <input class="filter" type="text" v-model="search" placeholder="Filter artists" />
-        <h4 class='current-filter'>Current filter: <strong>{{currentFilter}}</strong></h4>
+        <input
+          class="filter"
+          type="text"
+          v-model="search"
+          placeholder="Filter artists"
+        />
+        <h4 class="current-filter">
+          Current filter: <strong>{{ currentFilter }}</strong>
+        </h4>
       </div>
       <ArtistList :artists="filteredArtists" />
     </main>
@@ -16,6 +23,7 @@
 
 <script>
 import ArtistList from "../components/ArtistList.vue";
+const fetch = require("node-fetch");
 
 export default {
   name: "App",
@@ -23,6 +31,9 @@ export default {
     ArtistList
   },
   methods: {
+    fetch() {
+      require("node-fetch");
+    },
     async fetchArtists() {
       const res = await fetch("http://localhost:5000/artists");
       const data = await res.json();
@@ -33,21 +44,22 @@ export default {
   data() {
     return {
       artists: [],
-      search: ''
+      search: ""
     };
-    
   },
 
   computed: {
     filteredArtists() {
-      return this.artists.filter(artist => artist.name.toLowerCase().includes(this.search.toLowerCase()));
+      return this.artists.filter(artist =>
+        artist.name.toLowerCase().includes(this.search.toLowerCase())
+      );
     },
 
     currentFilter() {
-      return this.search.length ? this.search : '';
+      return this.search.length ? this.search : "";
     }
   },
-  async created() {
+  async mounted() {
     this.artists = await this.fetchArtists();
   }
 };

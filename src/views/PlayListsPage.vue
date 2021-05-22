@@ -32,7 +32,7 @@ export default {
       playlists: Object
     };
   },
-  async created() {
+  async mounted() {
     this.playlists = await this.fetchPlaylists();
   }
 };

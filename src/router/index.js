@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import ArtistListPage from "../views/ArtistListPage.vue";
 import ArtistPage from "../views/ArtistPage.vue";
+import PlayListPage from "../views/PlayListPage.vue";
 import PlayListsPage from "../views/PlayListsPage.vue";
 
 Vue.use(VueRouter);
@@ -21,6 +22,11 @@ const routes = [
     path: "/artist/:id",
     name: "ArtistPage",
     component: ArtistPage
+  },
+  {
+    path: "/playlist/:id",
+    name: "PlayListPage",
+    component: PlayListPage
   },
   {
     path: "/*",

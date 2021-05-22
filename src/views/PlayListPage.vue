@@ -1,11 +1,11 @@
 <template>
   <section class="overview">
     <header>
-      <h2>{{ artist.name }}</h2>
+      <h2>{{playlist.name}}</h2>
     </header>
 
     <main>
-    <h3 class='list-header'>All songs by {{artist.name}}</h3>
+    <h3 class='list-header'>SONGS</h3>
       <SongList :songs="songs" />
       <SongList />
     </main>
@@ -21,17 +21,9 @@ export default {
     SongList
   },
   methods: {
-    async fetchSongs() {
+    async fetchPlaylist() {
       const res = await fetch(
-        `http://localhost:5000/songs?artist=${this.artist.name}`
-      );
-      const data = await res.json();
-
-      return data;
-    },
-    async fetchArtist() {
-      const res = await fetch(
-        `http://localhost:5000/artists/${this.$route.params.id}`
+        `http://localhost:5000/playlists/${this.$route.params.id}`
       );
       const data = await res.json();
 
@@ -41,14 +33,13 @@ export default {
 
   data() {
     return {
-      artists: Object,
       songs: Object,
-      artist: Object
+      playlist: Object
     };
   },
   async mounted() {
-    this.artist = await this.fetchArtist();
-    this.songs = await this.fetchSongs();
+    this.playlist = await this.fetchPlaylist();
+    this.songs = await this.playlist.songs;
   }
 };
 </script>
