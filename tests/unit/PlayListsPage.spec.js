@@ -1,36 +1,33 @@
 import PlayListsPage from "@/views/PlayListsPage";
 import { shallowMount } from "@vue/test-utils";
 import { expect } from "chai";
+import axios from "axios";
+var MockAdapter = require("axios-mock-adapter");
+
+const instance = axios.create({
+  baseURL: "http://localhost:5000",
+  headers: { "Cache-Control": "no-cache" }
+});
+
+var mock = new MockAdapter(instance);
 
 describe("PlayListsPage", () => {
   let component;
 
-  beforeEach(() => {
-    const fetchPlaylistMock = {};
+  console.log(mock);
 
-    component = shallowMount(PlayListsPage, {
-      methods: {
-        fetchPlaylists: fetchPlaylistMock
-      },
-      data() {
-        return {
-          playlists: [
-            {
-              id: 1,
-              name: "sleep"
-            },
-            {
-              id: 2,
-              name: "wake"
-            },
-            {
-              id: 3,
-              name: "run"
-            }
-          ]
-        };
-      }
-    });
+  afterEach(() => {
+    mock.restore();
+  });
+
+  beforeEach(() => {
+    mock.reset();
+
+    mock
+      .onGet("http://localhost:5000/playlists")
+      .reply(200, [{ name: "foo" }, { name: "bar" }, { name: "baz" }]);
+
+    component = shallowMount(PlayListsPage);
   });
 
   it("should render a title", () => {
