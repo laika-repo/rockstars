@@ -51,7 +51,7 @@ body {
 
 .page-header {
   background-color: $main-yellow;
-  padding: $padding--large;
+  padding: $spacing--large;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@ h1 {
 
   & > header {
     background-color: $main-yellow;
-    padding: $padding--large $padding--xlarge;
+    padding: $spacing--large $spacing--xlarge;
   
 
     @include md {
@@ -120,11 +120,11 @@ h1 {
 h3.list-header {
   color: white;
   font-size: 24px;
-  margin-bottom: $padding--large;
+  margin-bottom: $spacing--large;
 }
 
 main {
-  margin: $padding--xxlarge $padding--xlarge;
+  margin: $spacing--xxlarge $spacing--xlarge;
   min-width: 33vw;
 }
 
@@ -147,7 +147,7 @@ main {
 }
 
 .list-item-link-wrapper {
-  padding: $padding--large 0;
+  padding: $spacing--large 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

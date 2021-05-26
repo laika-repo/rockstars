@@ -1,7 +1,7 @@
 <template>
   <section class="list">
     <div class="list-item" :key="playlist.id" v-for="playlist in playlists">
-      <PlayListsItem :playlist="playlist" />
+      <PlayListsItem :playlist="playlist" @remove="removeFromList" />
     </div>
   </section>
 </template>
@@ -15,6 +15,12 @@ export default {
     playlists: Array
   },
 
-  components: { PlayListsItem }
+  components: { PlayListsItem },
+
+  methods: {
+    removeFromList(playlist){
+      console.log(playlist);
+    }
+  },
 };
 </script>

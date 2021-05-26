@@ -1,54 +1,16 @@
 {
   "playlists": [
     {
-      "id": 1,
-      "name": "Songs for sleeping",
-      "songs": [
-        {
-          "id": 190,
-          "name": "(Don't Fear) The Reaper",
-          "year": 1975,
-          "artist": "Blue Öyster Cult",
-          "shortname": "dontfearthereaper",
-          "bpm": 141,
-          "duration": 322822,
-          "genre": "Classic Rock",
-          "spotifyId": "5QTxFnGygVM4jFQiBovmRo",
-          "album": "Agents of Fortune"
-		},
-		{
-			"id": 1363,
-			"name": "(Funky) Sex Farm",
-			"year": 2009,
-			"artist": "Spinal Tap",
-			"shortname": "funkysexfarm",
-			"bpm": 107,
-			"duration": 260068,
-			"genre": "Metal",
-			"spotifyId": "1VfdMD8JguRISrccgLifIZ",
-			"album": "Back From The Dead"
-		  },
-		  {
-			"id": 1858,
-			"name": "(I Just) Died in Your Arms",
-			"year": 1986,
-			"artist": "Cutting Crew",
-			"shortname": "ijustdiedinyourarms",
-			"bpm": 126,
-			"duration": 285745,
-			"genre": "New Wave",
-			"spotifyId": "4ByEFOBuLXpCqvO1kw8Wdm",
-			"album": "Broadcast"
-		  }
-      ]
+      "name": "sdsfsdf",
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "Songs for walking"
+      "name": "sdsfsdf",
+      "id": 3
     },
     {
-      "id": 3,
-      "name": "Songs for doing the dishes"
+      "name": "sdsfsdf",
+      "id": 4
     }
   ],
   "songs": [

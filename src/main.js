@@ -1,12 +1,19 @@
-import VueFetch from "vue-fetch";
 import Vue from "vue";
+import axios from "axios";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-
+import { cacheAdapterEnhancer } from "axios-extensions";
 Vue.config.productionTip = false;
 
-Vue.use(VueFetch);
+const instance = axios.create({
+  baseURL: "http://localhost:5000",
+  headers: { "Cache-Control": "no-cache" },
+  adapter: cacheAdapterEnhancer(axios.defaults.adapter)
+});
+
+Vue.prototype.axios = axios;
+Vue.prototype.$http = instance;
 
 new Vue({
   router,

@@ -1,12 +1,15 @@
 $main-yellow: #ffe000;
 $main-gray: #232323;
+$main-gray--lighter: lighten($main-gray, 10%);
+$main-gray--darker: darken($main-gray, 10%);
+$background-gray: lighten($main-gray, 80%);
 
-$padding--xsmall: 2px;
-$padding--small: 4px;
-$padding--regular: 8px;
-$padding--large: 16px;
-$padding--xlarge: 24px;
-$padding--xxlarge: 32px;
+$spacing--xsmall: 2px;
+$spacing--small: 4px;
+$spacing: 8px;
+$spacing--large: 16px;
+$spacing--xlarge: 24px;
+$spacing--xxlarge: 32px;
 
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 576px;

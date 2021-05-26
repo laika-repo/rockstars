@@ -74,12 +74,12 @@ export default {
   flex-direction: column;
   align-items: stretch;
 
-  margin-bottom: $padding--large;
+  margin-bottom: $spacing--large;
 
   .current-filter {
     color: white;
     font-weight: 300;
-    margin-bottom: $padding--small;
+    margin-bottom: $spacing--small;
 
     strong {
       font-weight: bold;
@@ -87,7 +87,7 @@ export default {
   }
 
   .filter {
-    padding: $padding--regular;
+    padding: $spacing;
   }
 }
 </style>

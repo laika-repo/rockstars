@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       artists: Object,
-      songs: Object,
+      songs: [],
       artist: Object
     };
   },

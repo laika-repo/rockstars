@@ -4,36 +4,42 @@
       <h2>All playlists</h2>
     </header>
     <main>
-        <h3 class='list-header'>All playlists</h3>
-        <PlayLists :playlists="playlists" />
+      <ListHeader title="All playlists" />
+      <AddListItem @addPlayList="addItem" />
+      <PlayLists :playlists="playlists" />
     </main>
   </section>
 </template>
 
 <script>
 import PlayLists from "../components/PlayLists.vue";
+import ListHeader from "../components/ListHeader.vue";
+import AddListItem from "../components/AddListItem.vue";
 
 export default {
   name: "PlayListPage",
   components: {
-    PlayLists
-  },
-  methods: {
-    async fetchPlaylists() {
-      const res = await fetch(`http://localhost:5000/playlists`);
-      const data = await res.json();
-
-      return data;
-    }
+    PlayLists,
+    ListHeader,
+    AddListItem
   },
 
   data() {
     return {
-      playlists: Object
+      playlists: []
     };
   },
-  async mounted() {
-    this.playlists = await this.fetchPlaylists();
+
+  methods: {
+    addItem(playlist) {
+      this.playlists.push(playlist);
+    }
+  },
+
+  mounted() {
+    this.$http
+      .get("/playlists")
+      .then(response => (this.playlists = response.data));
   }
 };
 </script>

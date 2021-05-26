@@ -9,6 +9,13 @@
       <SongList :songs="songs" />
       <SongList />
     </main>
+
+    <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
   </section>
 </template>
 
@@ -33,13 +40,27 @@ export default {
 
   data() {
     return {
-      songs: Object,
+      show: false,
+      songs: [],
       playlist: Object
     };
   },
-  async mounted() {
+  async created() {
     this.playlist = await this.fetchPlaylist();
     this.songs = await this.playlist.songs;
   }
 };
 </script>
+<style scoped lang="scss">
+
+    p {
+      color: red;
+    }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+</style>
